@@ -1,0 +1,14 @@
+{
+  "name": "sapui5",
+  "version": "1.0.0",
+  "description": "SAPUI5 Walkthrough https://www.youtube.com/watch?v=mmSB85rWQ3w",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcio Luis Casagrande",
+  "license": "ISC",
+  "devDependencies": {
+    "@ui5/cli": "^3.0.3"
+  }
+}
