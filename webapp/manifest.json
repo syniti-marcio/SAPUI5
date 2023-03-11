@@ -78,6 +78,10 @@
                 },
                 "uri": "<uriRelativeToManifest>"
             },
+            "invoice": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "invoices.json"
+            },
             "": {
                 "dataSource": "<dataSourceAlias>",
                 "settings": {}
