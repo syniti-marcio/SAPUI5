@@ -80,7 +80,7 @@
             },
             "invoice": {
                 "type": "sap.ui.model.json.JSONModel",
-                "uri": "invoices.json"
+                "uri": "model/Invoices.json"
             },
             "": {
                 "dataSource": "<dataSourceAlias>",
