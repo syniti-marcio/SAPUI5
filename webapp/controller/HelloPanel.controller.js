@@ -20,29 +20,11 @@ sap.ui.define([
         },
 
         onOpenDialog: function () {
-            var oView = this.getView();
-
-            // create the dialog lazily
-            if (!this.byId("helloDialog")) {
-                // load XML fragment asynchronously
-                Fragment.load({
-                    id: oView.getId(),
-                    name: "sap.ui.demo.walkthrough.view.helloDialog",
-                    controller: this
-                }).then(function (oDialog) {
-                    // connect dialog to the rootView of this component (models, lifecycle)
-                    oView.addDependent(oDialog);
-                    oDialog.open();
-                });
-            // if the dialog already exists
-            } else {
-                // just open it
-                this.byId("helloDialog").open();
-            }
+            this.getOwnerComponent().openHelloDialog();
         },
 
-        onCloseDialog: function() {
-            this.byId("helloDialog").close();
+        onCloseDialog: function () {
+            this.getOwnerComponent().closeHelloDialog();
         }
     });
 });
