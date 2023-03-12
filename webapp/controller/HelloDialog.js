@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/base/ManagedObject",
-    "sap/ui/core/Fragment"
-], function (ManagedObject, Fragment) {
+    "sap/ui/core/Fragment",
+    "sap/ui/core/syncStyleClass"
+], function (ManagedObject, Fragment, syncStyleClass) {
     "use strict";
 
     return ManagedObject.extend("sap.ui.walkthrough.controller.HelloDialog", {
@@ -27,6 +28,8 @@ sap.ui.define([
                 }).then(function (oDialog) {
                     // connect the dialog to the root view of the component (models and lifecycle)
                     oView.addDependent(oDialog);
+                    // forward the compact/cozy style into the dialog
+                    syncStyleClass(oView.getController().getOwnerComponent().getContentDensityClass(), oView, oDialog);
                     oDialog.open();
                 });
             } else {

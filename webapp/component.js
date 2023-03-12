@@ -37,6 +37,18 @@ sap.ui.define([
             this.getRouter().initialize();
         },
 
+        getContentDensityClass: function () {
+            if (!this._sContentDensityClass) {
+                // if the device doesn't support touch
+                if (!Device.support.touch) {
+                    this._sContentDensityClass = "sapUiSizeCompact";
+                } else {
+                    this._sContentDensityClass = "sapUiSizeCozy";
+                }
+            }
+            return this._sContentDensityClass;
+        },
+        
         openHelloDialog: function () {
             this._helloDialog.open();
         },
